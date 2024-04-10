@@ -3,8 +3,11 @@ package Handle;
 import List.List_Menu;
 import Utils.Utilities;
 
+import java.util.LinkedHashSet;
+
 public class Handle_Menu {
      private int choice;
+     Handle_EmptyRoom handleEmptyRoom = new Handle_EmptyRoom();
      List_Menu listMenu = new List_Menu();
      Handle_InfoDepartment handleInfoDepartment = new Handle_InfoDepartment();
      Handle_Checkin handleCheckin = new Handle_Checkin();
@@ -15,7 +18,8 @@ public class Handle_Menu {
         do {
             choice = Utilities.scanner.nextInt();
             if (choice == 1) {
-                System.out.println("Day la 1");
+                handleCheckin.access_handleemptyroom();
+                System.out.print("Moi lua chon chuc nang: ");
             } else if (choice == 2) {
                 System.out.println("Day la 2");
             } else if (choice == 3) {

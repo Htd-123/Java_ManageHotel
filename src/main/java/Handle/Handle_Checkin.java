@@ -8,14 +8,53 @@ import Object.InfoClient;
 import Utils.Utilities;
 
 public class Handle_Checkin{
+    Handle_EmptyRoom handleEmptyRoom = new Handle_EmptyRoom();
     private int maphong;
     private String ma_khachhang;
     private String hoten_khachhang;
     private int tongsongaythue_khachhang;
     Set<InfoClient> infoClients = new LinkedHashSet<>();
-    List<Integer> danhsachphongdangthue = new ArrayList<>();
 
-    //phuong thuc xu ly chon phong cho khach hang
+    public int getMaphong() {
+        return maphong;
+    }
+
+    public void setMaphong(int maphong) {
+        this.maphong = maphong;
+    }
+
+    public String getMa_khachhang() {
+        return ma_khachhang;
+    }
+
+    public void setMa_khachhang(String ma_khachhang) {
+        this.ma_khachhang = ma_khachhang;
+    }
+
+    public String getHoten_khachhang() {
+        return hoten_khachhang;
+    }
+
+    public void setHoten_khachhang(String hoten_khachhang) {
+        this.hoten_khachhang = hoten_khachhang;
+    }
+
+    public int getTongsongaythue_khachhang() {
+        return tongsongaythue_khachhang;
+    }
+
+    public void setTongsongaythue_khachhang(int tongsongaythue_khachhang) {
+        this.tongsongaythue_khachhang = tongsongaythue_khachhang;
+    }
+
+    public Set<InfoClient> getInfoClients() {
+        return infoClients;
+    }
+
+    public void setInfoClients(Set<InfoClient> infoClients) {
+        this.infoClients = infoClients;
+    }
+
     public void input_checkin() {
         //Nhap thong tin khach hang
         System.out.println("-----------------");
@@ -31,11 +70,14 @@ public class Handle_Checkin{
         tongsongaythue_khachhang = Utilities.scanner.nextInt();
         System.out.println("Da them thanh cong");
         System.out.println("-----------------");
-        infoClients.add(new InfoClient(maphong, ma_khachhang, hoten_khachhang, tongsongaythue_khachhang));
-        danhsachphongdangthue.add(maphong);
+        InfoClient newcustomer = new InfoClient(maphong, ma_khachhang, hoten_khachhang, tongsongaythue_khachhang);
+        infoClients.add(newcustomer);
+    }
 
-        for (Integer trong: danhsachphongdangthue) {
-            System.out.println("Danh sach phong dang cho thue " + trong);
+    public void access_handleemptyroom() {
+        for (InfoClient customer: infoClients) {
+            handleEmptyRoom.add_emtyroom(customer);
         }
+        handleEmptyRoom.show_emptyroom();
     }
 }
