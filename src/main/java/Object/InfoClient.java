@@ -37,5 +37,8 @@ public class InfoClient extends InfoDepartment{
     public void setTongngaythue_khachhang(int tongngaythue_khachhang) {
         this.tongngaythue_khachhang = tongngaythue_khachhang;
     }
-
+    // Tinh da hinh
+    public void list_infoclient() {
+        System.out.println(getMaphong() + getMa_khachhang() + getHoten_khachhang() + getTongngaythue_khachhang());
+    }
 }

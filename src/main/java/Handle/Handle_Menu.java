@@ -3,38 +3,46 @@ package Handle;
 import List.List_Menu;
 import Utils.Utilities;
 
-import java.util.LinkedHashSet;
-
 public class Handle_Menu {
      private int choice;
-     Handle_EmptyRoom handleEmptyRoom = new Handle_EmptyRoom();
      List_Menu listMenu = new List_Menu();
      Handle_InfoDepartment handleInfoDepartment = new Handle_InfoDepartment();
      Handle_Checkin handleCheckin = new Handle_Checkin();
+     Handle_InfoStaff handleInfoStaff = new Handle_InfoStaff();
 
-    //Ham xu ly lua chon menu
+    //Phuong thuc xu ly lua chon menu
     public void choice_menu() {
         listMenu.show_menu();
         do {
             choice = Utilities.scanner.nextInt();
             if (choice == 1) {
-                handleCheckin.access_handleemptyroom();
+                handleCheckin.access_handlerentedroom();
                 System.out.print("Moi lua chon chuc nang: ");
             } else if (choice == 2) {
-                System.out.println("Day la 2");
-            } else if (choice == 3) {
                 handleCheckin.input_checkin();
                 System.out.print("Moi lua chon chuc nang: ");
+            } else if (choice == 3) {
+
+                System.out.print("Moi lua chon chuc nang: ");
             } else if (choice == 4) {
-                
+
+                System.out.print("Moi lua chon chuc nang: ");
             } else if (choice == 5) {
 
+                System.out.print("Moi lua chon chuc nang: ");
             } else if (choice == 6) {
-                handleInfoDepartment.show_infodepartment();
+                handleCheckin.list_infoclient();
                 System.out.print("Moi lua chon chuc nang: ");
             } else if (choice == 7) {
-                
+                handleInfoDepartment.show_infodepartment();
+                System.out.print("Moi lua chon chuc nang: ");
+            } else if (choice == 8) {
+                handleInfoStaff.show_infostaff();
+                System.out.print("Moi lua chon chuc nang: ");
+            } else if (choice == 9) {
+
+                System.out.print("Moi lua chon chuc nang: ");
             }
-        } while (choice != 8);
+        } while (choice != 10);
     }
 }

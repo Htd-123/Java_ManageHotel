@@ -1,14 +1,13 @@
 package Handle;
 
-import java.util.ArrayList;
 import java.util.LinkedHashSet;
-import java.util.List;
 import java.util.Set;
 import Object.InfoClient;
 import Utils.Utilities;
 
-public class Handle_Checkin{
-    Handle_EmptyRoom handleEmptyRoom = new Handle_EmptyRoom();
+public class Handle_Checkin extends InfoClient{
+    Handle_RentedRoom handleRentedRoom = new Handle_RentedRoom();
+    Handle_InfoClient handleInfoClient = new Handle_InfoClient();
     private int maphong;
     private String ma_khachhang;
     private String hoten_khachhang;
@@ -56,7 +55,7 @@ public class Handle_Checkin{
     }
 
     public void input_checkin() {
-        //Nhap thong tin khach hang
+        // Nhap thong tin khach hang
         System.out.println("-----------------");
         System.out.print("Nhap chon ma phong: ");
         maphong = Utilities.scanner.nextInt();
@@ -73,11 +72,15 @@ public class Handle_Checkin{
         InfoClient newcustomer = new InfoClient(maphong, ma_khachhang, hoten_khachhang, tongsongaythue_khachhang);
         infoClients.add(newcustomer);
     }
-
-    public void access_handleemptyroom() {
+    public void access_handlerentedroom() {
         for (InfoClient customer: infoClients) {
-            handleEmptyRoom.add_emtyroom(customer);
+            handleRentedRoom.add_rentedroom(customer);
         }
-        handleEmptyRoom.show_emptyroom();
+        handleRentedRoom.show_rentedroom();
+    }
+    // Tinh da hinh
+    @Override
+    public void list_infoclient() {
+
     }
 }
