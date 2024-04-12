@@ -6,16 +6,19 @@ import Object.InfoClient;
 import Utils.Utilities;
 
 public class Handle_EditCustomer extends Handle_InfoClient{
-    private String ma_khachhang;
+    private int maphongmoi;
+    private int tongngaythue_khachhangmoi;
     List<InfoClient> list_infoclient = new ArrayList<>();
-    public void edit_infoclient (InfoClient client) {
+    public void edit_infoclient (InfoClient client, String makhachhang_new) {
         list_infoclient.add(client);
-        System.out.println("-----------------");
-        System.out.println("Nhap ma khach hang can sua: ");
-        ma_khachhang = Utilities.scanner.nextLine();
-        for (int i = 0; i < list_infoclient.size(); i++) {
-            if (list_infoclient.get(i).equals(ma_khachhang)) {
-
+        for (InfoClient add_listinfoclient: list_infoclient) {
+            if (add_listinfoclient.getMa_khachhang().equals(makhachhang_new)) {
+                System.out.print("Cap nhat ma phong: ");
+                maphongmoi = Utilities.scanner.nextInt();
+                System.out.print("Cap nhat so ngay thue: ");
+                tongngaythue_khachhangmoi = Utilities.scanner.nextInt();
+                add_listinfoclient.setMaphong(maphongmoi);
+                add_listinfoclient.setTongngaythue_khachhang(tongngaythue_khachhangmoi);
                 break;
             }
         }

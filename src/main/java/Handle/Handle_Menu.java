@@ -8,6 +8,7 @@ public class Handle_Menu {
      List_Menu listMenu = new List_Menu();
      Handle_InfoDepartment handleInfoDepartment = new Handle_InfoDepartment();
      Handle_Checkin handleCheckin = new Handle_Checkin();
+     Handle_InfoClient handleInfoClient = new Handle_InfoClient();
      Handle_InfoStaff handleInfoStaff = new Handle_InfoStaff();
 
     //Phuong thuc xu ly lua chon menu
@@ -22,16 +23,16 @@ public class Handle_Menu {
                 handleCheckin.input_checkin();
                 System.out.print("Moi lua chon chuc nang: ");
             } else if (choice == 3) {
-
+                handleCheckin.list_infoclient();
                 System.out.print("Moi lua chon chuc nang: ");
             } else if (choice == 4) {
-
+                handleCheckin.access_handleremoveclient();
                 System.out.print("Moi lua chon chuc nang: ");
             } else if (choice == 5) {
 
                 System.out.print("Moi lua chon chuc nang: ");
             } else if (choice == 6) {
-                handleCheckin.list_infoclient();
+                handleCheckin.access_handleinfoclient();
                 System.out.print("Moi lua chon chuc nang: ");
             } else if (choice == 7) {
                 handleInfoDepartment.show_infodepartment();

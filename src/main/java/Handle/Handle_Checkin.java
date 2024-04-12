@@ -7,11 +7,15 @@ import Utils.Utilities;
 
 public class Handle_Checkin extends InfoClient{
     Handle_RentedRoom handleRentedRoom = new Handle_RentedRoom();
+    Handle_EditCustomer handleEditCustomer = new Handle_EditCustomer();
     Handle_InfoClient handleInfoClient = new Handle_InfoClient();
+    Handle_RemoveCustomer handleRemoveCustomer = new Handle_RemoveCustomer();
     private int maphong;
     private String ma_khachhang;
     private String hoten_khachhang;
     private int tongsongaythue_khachhang;
+    private String ma_khachhangmoi;
+    private String remove_makhachhang;
     Set<InfoClient> infoClients = new LinkedHashSet<>();
 
     public int getMaphong() {
@@ -72,15 +76,41 @@ public class Handle_Checkin extends InfoClient{
         InfoClient newcustomer = new InfoClient(maphong, ma_khachhang, hoten_khachhang, tongsongaythue_khachhang);
         infoClients.add(newcustomer);
     }
+    // Hien thi cac phong dang cho thue
     public void access_handlerentedroom() {
         for (InfoClient customer: infoClients) {
             handleRentedRoom.add_rentedroom(customer);
         }
         handleRentedRoom.show_rentedroom();
     }
-    // Tinh da hinh
+    // Hien thi thong tin khach hang
+    public void access_handleinfoclient() {
+        for (InfoClient info_customer: infoClients) {
+            handleInfoClient.add_infoclient(info_customer);
+        }
+        handleInfoClient.show_infoclient();
+    }
+    // Xoa thong tin khach hang
+    public void access_handleremoveclient() {
+        System.out.print("Nhap ma khach hang can xoa: ");
+        Utilities.scanner.nextLine();
+        remove_makhachhang = Utilities.scanner.nextLine();
+        for (InfoClient remove_customer: infoClients) {
+            handleRemoveCustomer.remove_client(remove_customer, remove_makhachhang);
+        }
+        handleRemoveCustomer.show_removeclient();
+    }
+    // Tinh da hinh xu ly update thong tin khach hang
     @Override
     public void list_infoclient() {
-
+        System.out.println("-----------------");
+        System.out.print("Nhap ma khach hang can sua: ");
+        Utilities.scanner.nextLine();
+        ma_khachhangmoi = Utilities.scanner.nextLine();
+        for (InfoClient edit_customer: infoClients) {
+            handleEditCustomer.edit_infoclient(edit_customer, ma_khachhangmoi);
+            break;
+        }
+        handleEditCustomer.show_infoclient();
     }
 }

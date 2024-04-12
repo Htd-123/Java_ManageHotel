@@ -13,7 +13,7 @@ public class List_Menu {
         System.out.println("7. Thong tin cac phong");
         System.out.println("8. Thong tin nhan vien");
         System.out.println("9. Xuat thong tin hoa don ra file txt");
-        System.out.println("10. Thoat");
+        System.out.println("10.Thoat chuong trinh");
         System.out.println("-----------------");
         System.out.print("Moi lua chon chuc nang: ");
     }
