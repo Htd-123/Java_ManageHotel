@@ -10,6 +10,7 @@ public class Handle_Checkin extends InfoClient{
     Handle_EditCustomer handleEditCustomer = new Handle_EditCustomer();
     Handle_InfoClient handleInfoClient = new Handle_InfoClient();
     Handle_RemoveCustomer handleRemoveCustomer = new Handle_RemoveCustomer();
+    Handle_Pay handlePay = new Handle_Pay();
     private int maphong;
     private String ma_khachhang;
     private String hoten_khachhang;
@@ -112,5 +113,18 @@ public class Handle_Checkin extends InfoClient{
             break;
         }
         handleEditCustomer.show_infoclient();
+    }
+
+    public void pay() {
+        int maphong;
+        System.out.println("-----------------");
+        System.out.print("Nhap vao ma khach hang can thanh toan: ");
+        Utilities.scanner.nextLine();
+        String makhachhang_pay = Utilities.scanner.nextLine();
+        for (InfoClient pay_customer: infoClients) {
+            if (makhachhang_pay.equals(pay_customer.getMa_khachhang())) {
+                System.out.println(pay_customer.getTongngaythue_khachhang());
+            }
+        }
     }
 }

@@ -1,5 +1,5 @@
 package Handle;
 
 public abstract class Abstract {
-    public abstract void pay();
+    public abstract void handle_pay(int songaythue);
 }

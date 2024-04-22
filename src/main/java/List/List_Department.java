@@ -10,8 +10,8 @@ public class List_Department extends InfoDepartment {
     public List_Department() {
 
     }
-    public List_Department(int maphong, String tenphong) {
-        super(maphong, tenphong);
+    public List_Department(int maphong, String tenphong, int giaphong) {
+        super(maphong, tenphong, giaphong);
     }
     public Set<List_Department> getListDepartmentSet() {
         return listDepartmentSet;
@@ -22,10 +22,10 @@ public class List_Department extends InfoDepartment {
     }
 
     public void list_InfoDepartment() {
-        listDepartmentSet.add(new List_Department(301, "Phong don"));
-        listDepartmentSet.add(new List_Department(302, "Phong don"));
-        listDepartmentSet.add(new List_Department(401, "Phong doi"));
-        listDepartmentSet.add(new List_Department(402,"Phong doi"));
-        listDepartmentSet.add(new List_Department(501,"Phong vip"));
+        listDepartmentSet.add(new List_Department(301, "Phong don", 50000));
+        listDepartmentSet.add(new List_Department(302, "Phong don", 50000));
+        listDepartmentSet.add(new List_Department(401, "Phong doi", 100000));
+        listDepartmentSet.add(new List_Department(402,"Phong doi",  100000));
+        listDepartmentSet.add(new List_Department(501,"Phong vip", 200000));
     }
 }

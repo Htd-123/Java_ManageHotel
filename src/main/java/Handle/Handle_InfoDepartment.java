@@ -15,7 +15,8 @@ public class Handle_InfoDepartment {
         System.out.println("-----------------");
         for (List_Department list_department: listDepartmentSet) {
             System.out.print("Ma phong: " + list_department.getMaphong() + " |");
-            System.out.println(" Ten phong: " + list_department.getTenphong());
+            System.out.print(" Ten phong: " + list_department.getTenphong() + " |");
+            System.out.println(" Gia phong: " + list_department.getGiaphong());
         }
         System.out.println("-----------------");
     }

@@ -29,7 +29,7 @@ public class Handle_Menu {
                 handleCheckin.access_handleremoveclient();
                 System.out.print("Moi lua chon chuc nang: ");
             } else if (choice == 5) {
-
+                handleCheckin.pay();
                 System.out.print("Moi lua chon chuc nang: ");
             } else if (choice == 6) {
                 handleCheckin.access_handleinfoclient();
