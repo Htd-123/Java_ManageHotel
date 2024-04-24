@@ -1,17 +1,21 @@
 package Handle;
 
-import List.List_Department;
-
-import java.util.List;
-import java.util.Set;
-
 public class Handle_Pay extends Abstract{
-    List_Department listDepartment = new List_Department();
     @Override
-    public void handle_pay(int songaythue) {
-        Set<List_Department> listDepartments = listDepartment.getListDepartmentSet();
-        for (List_Department list_department: listDepartments) {
-            System.out.println(list_department.getGiaphong() + songaythue);
-        }
+    public void handle_pay() {
+//        String directory = "C:\\Users\\PC\\Desktop\\Java\\Java_ManageStudent(OOP)\\ManageHotel\\";
+//        String fileName = directory + "bai1.txt";
+//
+//        try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true))) {
+//            // Viết dữ liệu vào file
+//            Utilities.scanner.nextLine();
+//            String name = Utilities.scanner.nextLine();
+//            writer.write(name);
+//            writer.newLine();
+//
+//            System.out.println("File txt đã được tạo thành công!");
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
     }
 }

@@ -1,15 +1,22 @@
 package Handle;
 
+import java.io.IOException;
+import java.util.InputMismatchException;
 import java.util.LinkedHashSet;
 import java.util.Set;
+
+import List.List_Department;
 import Object.InfoClient;
 import Utils.Utilities;
+
+import javax.imageio.IIOException;
 
 public class Handle_Checkin extends InfoClient{
     Handle_RentedRoom handleRentedRoom = new Handle_RentedRoom();
     Handle_EditCustomer handleEditCustomer = new Handle_EditCustomer();
     Handle_InfoClient handleInfoClient = new Handle_InfoClient();
     Handle_RemoveCustomer handleRemoveCustomer = new Handle_RemoveCustomer();
+    List_Department listDepartment = new List_Department();
     Handle_Pay handlePay = new Handle_Pay();
     private int maphong;
     private String ma_khachhang;
@@ -62,8 +69,12 @@ public class Handle_Checkin extends InfoClient{
     public void input_checkin() {
         // Nhap thong tin khach hang
         System.out.println("-----------------");
-        System.out.print("Nhap chon ma phong: ");
-        maphong = Utilities.scanner.nextInt();
+        try {
+            System.out.print("Nhap chon ma phong: ");
+            maphong = Utilities.scanner.nextInt();
+        } catch (InputMismatchException e) {
+            System.out.println("Vui long nhap so nguyen");
+        }
         // Tieu diet ky tu xuong dong trong nextInt
         Utilities.scanner.nextLine();
         System.out.print("Nhap ma khach hang: ");
@@ -123,7 +134,18 @@ public class Handle_Checkin extends InfoClient{
         String makhachhang_pay = Utilities.scanner.nextLine();
         for (InfoClient pay_customer: infoClients) {
             if (makhachhang_pay.equals(pay_customer.getMa_khachhang())) {
-                System.out.println(pay_customer.getTongngaythue_khachhang());
+               listDepartment.pay_InfoDepartment(pay_customer.getTongngaythue_khachhang(), pay_customer.getMaphong());
+            }
+        }
+    }
+    public void pay_print() {
+        System.out.println("-----------------");
+        System.out.print("Nhap vao ma khach hang can in: ");
+        Utilities.scanner.nextLine();
+        String makhachhang_print = Utilities.scanner.nextLine();
+        for (InfoClient pay_customer: infoClients) {
+            if (makhachhang_print.equals(pay_customer.getMa_khachhang())) {
+                listDepartment.print_pay(pay_customer.getTongngaythue_khachhang(), pay_customer.getMaphong(), pay_customer.getHoten_khachhang());
             }
         }
     }

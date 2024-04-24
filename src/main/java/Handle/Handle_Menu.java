@@ -8,8 +8,8 @@ public class Handle_Menu {
      List_Menu listMenu = new List_Menu();
      Handle_InfoDepartment handleInfoDepartment = new Handle_InfoDepartment();
      Handle_Checkin handleCheckin = new Handle_Checkin();
-     Handle_InfoClient handleInfoClient = new Handle_InfoClient();
      Handle_InfoStaff handleInfoStaff = new Handle_InfoStaff();
+     Handle_Pay handlePay = new Handle_Pay();
 
     //Phuong thuc xu ly lua chon menu
     public void choice_menu() {
@@ -41,7 +41,7 @@ public class Handle_Menu {
                 handleInfoStaff.show_infostaff();
                 System.out.print("Moi lua chon chuc nang: ");
             } else if (choice == 9) {
-
+                handleCheckin.pay_print();
                 System.out.print("Moi lua chon chuc nang: ");
             }
         } while (choice != 10);
